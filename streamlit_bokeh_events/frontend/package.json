@@ -1,21 +1,30 @@
 {
-  "name": "streamlit_bokeh_events",
+  "name": "streamlit_bokeh3_events",
   "version": "0.1.3",
   "private": true,
   "dependencies": {
-    "@bokeh/bokehjs": "^2.4.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
+    "@bokeh/bokehjs": "^3.3.2",
+    "@bokeh/numbro": "^1.6.2",
+    "@bokeh/slickgrid": "~2.4.4102",
+    "choices.js": "^10.1.0",
+    "hammerjs": "^2.0.4",
+    "flatbush": "^4.0.0",
+    "flatpickr": "^4.6.13",
+    "mathjax-full": "^3.2.2",
+    "nouislider": "^15.6.1",
+    "proj4": "^2.8.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "regl": "^2.1.0",
+    "sprintf-js": "^1.1.2",
+    "streamlit-component-lib": "^2.0.0",
+    "timezone": "^1.0.23",
+    "underscore.template": "^0.1.7",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "4.0.3",
-    "streamlit-component-lib": "^1.3.0",
-    "typescript": "~3.7.2"
+    "react-scripts": "^5.0.1",
+    "typescript": "^4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,10 +35,20 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
+  "browserslist": {
+    "production": [
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
-  "homepage": "."
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": ".",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
 }
