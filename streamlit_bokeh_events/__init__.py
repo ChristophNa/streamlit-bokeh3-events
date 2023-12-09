@@ -6,7 +6,7 @@ from random import choices
 from string import ascii_letters
 import streamlit.components.v1 as components
 
-_RELEASE = True
+_RELEASE = False
 
 if not _RELEASE:
     _component_func = components.declare_component(
@@ -47,7 +47,6 @@ def streamlit_bokeh_events(bokeh_plot=None, events="", key=None, debounce_time=1
     )
     return component_value
 
-
 if not _RELEASE:
     import streamlit as st
     import pandas as pd
@@ -59,7 +58,7 @@ if not _RELEASE:
     st.set_page_config(layout="wide")
     # import function
     # from streamlit_bokeh_events import streamlit_bokeh_events
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
     df = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
     # create plot
     cds = ColumnDataSource(df)
@@ -83,7 +82,7 @@ if not _RELEASE:
         result = streamlit_bokeh_events(
             bokeh_plot=table,
             events="INDEX_SELECT",
-            key="foo",
+            key="fooInit",
             refresh_on_update=False,
             debounce_time=0,
             override_height=500
