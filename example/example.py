@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from streamlit_bokeh_events import streamlit_bokeh_events
 
-@st.cache
+@st.cache_data
 def data():
     df = pd.DataFrame({"x": np.random.rand(500), "y": np.random.rand(500), "size": np.random.rand(500) * 10})
     return df
@@ -15,7 +15,7 @@ source = ColumnDataSource(df)
 
 st.subheader("Select Points From Map")
 
-plot = figure( tools="lasso_select,reset", width=250, height=250)
+plot = figure( tools="lasso_select,reset", width=500, height=500)
 plot.circle(x="x", y="y", size="size", source=source, alpha=0.6)
 
 source.selected.js_on_change(
@@ -33,7 +33,7 @@ source.selected.js_on_change(
 event_result = streamlit_bokeh_events(
     events="TestSelectEvent",
     bokeh_plot=plot,
-    key="foo",
+    key="foo1",
     debounce_time=100,
     refresh_on_update=False
 )

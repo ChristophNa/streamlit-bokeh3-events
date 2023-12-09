@@ -12,7 +12,7 @@ st.set_page_config(layout="wide")
 
 from streamlit_bokeh_events import streamlit_bokeh_events
 
-@st.cache
+@st.cache_data
 def load_data():
     X, y = make_blobs(n_features=2, centers=3)
     return pd.DataFrame({"x": X[:, 0], "y": X[:, 1], "label": y})

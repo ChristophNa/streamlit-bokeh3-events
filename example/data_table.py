@@ -29,7 +29,7 @@ CustomJS(
 )
 )
 p = DataTable(source=cds, columns=columns)
-result = streamlit_bokeh_events(bokeh_plot=p, events="INDEX_SELECT", key="foo", refresh_on_update=False, debounce_time=0, override_height=100)
+result = streamlit_bokeh_events(bokeh_plot=p, events="INDEX_SELECT", key="foo", refresh_on_update=False, debounce_time=0, override_height=200)
 if result:
         if result.get("INDEX_SELECT"):
                 st.write(df.iloc[result.get("INDEX_SELECT")["data"]])
