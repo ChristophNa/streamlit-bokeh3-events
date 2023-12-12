@@ -12,12 +12,11 @@ The original implementation of ash2shukla looks very promising, however, I was n
 - run `npm run start`
 - open another terminal and navigate to the directory where you cloned the repo
 - run `pip install .`
-- execute `streamlit run example/example.py`
-
+- execute `streamlit run example/example.py`  
 Your browser will now show a nice streamlit app where you can interactively select data points from a bokeh plot using a lasso tool. I also tested all other examples from ash2shukla and they worked.
 
 # Packaging
-To get a pip package, we have to build the frontend, which can be achieved by running `npm run build` in the frontend directory. This produces a production build that can be later digested by pip. On my system it builds successfully. You can now use the build to run the server (just as before with `npm run start`) using the following command: `serve -s build -l 3001`. (Remark: maybe you have to install serve before by using `npm install -g serve`).
+To get a pip package, we have to build the frontend, which can be achieved by running `npm run build` in the frontend directory. This produces a production build that can be later digested by pip. On my system it builds successfully. You can now use the build to run the server (just as before with `npm run start`) using the following command: `serve -s build -l 3001`. (Remark: maybe you have to install serve before by using `npm install -g serve`).  
 On my system, this gives an error that you can see in your browser by inspection (e.g. F12 in Chrome):
 ```
 Uncaught TypeError: M is not a constructor
@@ -42,5 +41,13 @@ Due to this error, the streamlit app cannot run properly and it complains
 ```
 (The app is attempting to load the component from http://localhost:3001, and hasn't received its "streamlit
 " message.)
+```  
+These are my installed versions:  
 ```
-In short: the component already runs successfully with the frontend part in development mode (using ```npm run start```) and fails in optimized mode (using ```npm run build```).
+npm -v
+10.2.4
+node -v
+v21.3.0
+```  
+In short: the component already runs successfully with the frontend part in development mode (using ```npm run start```) and fails in optimized mode (using ```npm run build```).  
+**If anyone can help me with this issue we can make an updated version of ash2shukla's repository with the newest bokeh version. Even testing and trying to reproduce the error on other systems would already help.**
