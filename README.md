@@ -50,4 +50,4 @@ node -v
 v21.3.0
 ```  
 In short: the component already runs successfully with the frontend part in development mode (using ```npm run start```) and fails in optimized mode (using ```npm run build```).  
-**If anyone can help me with this issue we can make an updated version of ash2shukla's repository with the newest bokeh version. Even testing and trying to reproduce the error on other systems would already help.**
+**If anyone can help me with this [issue](https://github.com/ChristophNa/streamlit-bokeh3-events/issues/1) we can make an updated version of ash2shukla's repository with the newest bokeh version. Even testing and trying to reproduce the error on other systems would already help.**
