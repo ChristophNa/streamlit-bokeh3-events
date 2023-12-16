@@ -1,7 +1,7 @@
 import streamlit as st
 from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
-from streamlit_bokeh_events import streamlit_bokeh_events
+from streamlit_bokeh3_events import streamlit_bokeh3_events
 from io import StringIO
 import pandas as pd
 
@@ -10,7 +10,7 @@ copy_button = Button(label="Get Clipboard Data")
 copy_button.js_on_event("button_click", CustomJS(code="""
     navigator.clipboard.readText().then(text => document.dispatchEvent(new CustomEvent("GET_TEXT", {detail: text})))
     """))
-result = streamlit_bokeh_events(
+result = streamlit_bokeh3_events(
     copy_button,
     events="GET_TEXT",
     key="get_text",
