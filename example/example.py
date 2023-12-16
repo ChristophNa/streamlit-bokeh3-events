@@ -3,7 +3,7 @@ from bokeh.models import ColumnDataSource, CustomJS
 from bokeh.plotting import figure
 import pandas as pd
 import numpy as np
-from streamlit_bokeh_events import streamlit_bokeh_events
+from streamlit_bokeh3_events import streamlit_bokeh3_events
 
 @st.cache_data
 def data():
@@ -30,7 +30,7 @@ source.selected.js_on_change(
     ),
 )
 
-event_result = streamlit_bokeh_events(
+event_result = streamlit_bokeh3_events(
     events="TestSelectEvent",
     bokeh_plot=plot,
     key="foo1",

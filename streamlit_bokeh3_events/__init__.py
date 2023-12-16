@@ -6,19 +6,19 @@ from random import choices
 from string import ascii_letters
 import streamlit.components.v1 as components
 
-_RELEASE = False
+_RELEASE = True
 
 if not _RELEASE:
     _component_func = components.declare_component(
-        "streamlit_bokeh_events", url="http://localhost:3001",
+        "streamlit_bokeh3_events", url="http://localhost:3001",
     )
 else:
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(parent_dir, "frontend/build")
-    _component_func = components.declare_component("streamlit_bokeh_events", path=build_dir)
+    _component_func = components.declare_component("streamlit_bokeh3_events", path=build_dir)
 
 
-def streamlit_bokeh_events(bokeh_plot=None, events="", key=None, debounce_time=1000, refresh_on_update=True, override_height=None):
+def streamlit_bokeh3_events(bokeh_plot=None, events="", key=None, debounce_time=1000, refresh_on_update=True, override_height=None):
     """Returns event dict
 
     Keyword arguments:
@@ -57,7 +57,7 @@ if not _RELEASE:
 
     st.set_page_config(layout="wide")
     # import function
-    # from streamlit_bokeh_events import streamlit_bokeh_events
+    # from streamlit_bokeh3_events import streamlit_bokeh3_events
     col1, col2 = st.columns(2)
     df = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
     # create plot
@@ -79,7 +79,7 @@ if not _RELEASE:
 
     table = DataTable(source=cds, columns=columns)
     with col1:
-        result = streamlit_bokeh_events(
+        result = streamlit_bokeh3_events(
             bokeh_plot=table,
             events="INDEX_SELECT",
             key="fooInit",
@@ -108,7 +108,7 @@ if not _RELEASE:
 
     plot.circle("sepal_length", "sepal_width", fill_alpha=0.5, color="colors", size=10, line_color=None, source=cds_lasso)
     with col2:
-        result_lasso = streamlit_bokeh_events(
+        result_lasso = streamlit_bokeh3_events(
             bokeh_plot=plot,
             events="LASSO_SELECT",
             key="bar",

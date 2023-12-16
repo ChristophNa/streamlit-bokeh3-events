@@ -7,7 +7,7 @@ The original implementation of ash2shukla looks very promising, however, I was n
 # Installation
 - Install all requirements listed [here](https://docs.streamlit.io/library/components/components-api#development-environment-setup)
 - clone this repository
-- navigate to `streamlit_bokeh_events/frontend`
+- navigate to `streamlit_bokeh3_events/frontend`
 - run `npm install`
 - run `npm run start`
 - open another terminal and navigate to the directory where you cloned the repo

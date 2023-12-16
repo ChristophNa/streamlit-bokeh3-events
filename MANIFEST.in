@@ -1,1 +1,1 @@
-recursive-include streamlit_bokeh_events/frontend/build *
+recursive-include streamlit_bokeh3_events/frontend/build *

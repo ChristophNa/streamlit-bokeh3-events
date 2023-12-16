@@ -3,7 +3,7 @@ import pandas as pd
 from bokeh.plotting import figure
 from bokeh.models import ColumnDataSource, CustomJS
 from bokeh.models import DataTable, TableColumn
-from streamlit_bokeh_events import streamlit_bokeh_events
+from streamlit_bokeh3_events import streamlit_bokeh3_events
 
 df = pd.DataFrame({
         "x": [1, 2, 3, 4],
@@ -29,7 +29,7 @@ CustomJS(
 )
 )
 p = DataTable(source=cds, columns=columns)
-result = streamlit_bokeh_events(bokeh_plot=p, events="INDEX_SELECT", key="foo", refresh_on_update=False, debounce_time=0, override_height=200)
+result = streamlit_bokeh3_events(bokeh_plot=p, events="INDEX_SELECT", key="foo", refresh_on_update=False, debounce_time=0, override_height=200)
 if result:
         if result.get("INDEX_SELECT"):
                 st.write(df.iloc[result.get("INDEX_SELECT")["data"]])

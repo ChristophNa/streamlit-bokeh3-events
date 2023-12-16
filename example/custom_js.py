@@ -1,7 +1,7 @@
 import streamlit as st
 from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
-from streamlit_bokeh_events import streamlit_bokeh_events
+from streamlit_bokeh3_events import streamlit_bokeh3_events
 
 loc_button = Button(label="Get Location")
 loc_button.js_on_event("button_click", CustomJS(code="""
@@ -11,7 +11,7 @@ loc_button.js_on_event("button_click", CustomJS(code="""
         }
     )
     """))
-result = streamlit_bokeh_events(
+result = streamlit_bokeh3_events(
     loc_button,
     events="GET_LOCATION",
     key="get_location",

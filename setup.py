@@ -1,10 +1,10 @@
 import setuptools
 
 setuptools.setup(
-    name="streamlit-bokeh-events",
-    version="0.1.3",
-    author="Ashish Shukla",
-    author_email="ash2shukla@gmail.com",
+    name="streamlit-bokeh3-events",
+    version="0.1.4",
+    author="Ashish Shukla and Christoph Naumann",
+    author_email="christoph.naumann1985@gmail.com",
     description="A custom streamlit component to return js event values from bokeh plots to streamlit",
     long_description="",
     long_description_content_type="text/plain",
@@ -12,9 +12,9 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[],
-    python_requires=">=3.6",
+    python_requires=">=3.9",
     install_requires=[
-        "bokeh>=2.4.1",
-        "streamlit >= 0.63",
+        "bokeh>=3.1.1",
+        "streamlit >= 1.23.0",
     ],
 )

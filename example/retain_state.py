@@ -10,7 +10,7 @@ from sklearn.datasets import make_blobs
 from state import provide_state
 st.set_page_config(layout="wide")
 
-from streamlit_bokeh_events import streamlit_bokeh_events
+from streamlit_bokeh3_events import streamlit_bokeh3_events
 
 @st.cache_data
 def load_data():
@@ -52,7 +52,7 @@ def main(state):
                 """
             )
         )
-        event_result = streamlit_bokeh_events(p1, "select_event", key="select_event")
+        event_result = streamlit_bokeh3_events(p1, "select_event", key="select_event")
 
     with col2:
         if event_result is not None:
